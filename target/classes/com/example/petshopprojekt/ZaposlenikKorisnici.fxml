@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="510.0" prefWidth="983.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.petshopprojekt.ZaposlenikKorisniciController">
+    <children>
+        <fx:include source="ZaposlenikNavigacija.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" GridPane.rowSpan="3" />
+        <AnchorPane layoutX="201.0" prefHeight="510.0" prefWidth="782.0" stylesheets="@../../../CSS/Ostalo.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="201.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <GridPane prefHeight="510.0" prefWidth="775.0" styleClass="gridPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <TableView fx:id="tablica" onMouseClicked="#odaberiKorisnika" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="2">
+                            <columns>
+                                <TableColumn fx:id="imeTablica" prefWidth="99.20002782344818" sortable="false" text="Ime" />
+                                <TableColumn fx:id="prezimeTablica" prefWidth="113.59998321533203" sortable="false" text="Prezime" />
+                                <TableColumn fx:id="korisnickoTablica" prefWidth="179.20001220703125" sortable="false" text="Korisnicko ime" />
+                                <TableColumn fx:id="datumTablica" minWidth="0.0" prefWidth="146.39999389648438" sortable="false" text="Datum rođenja" />
+                        <TableColumn fx:id="adresaTablica" prefWidth="220.80001220703127" sortable="false" text="Adresa" />
+                            </columns>
+                            <GridPane.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </GridPane.margin>
+                        </TableView>
+                        <TextField fx:id="ime" promptText="Ime zaposlenika">
+                            <GridPane.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="prezime" promptText="Prezime zaposlenika" GridPane.columnIndex="1">
+                            <GridPane.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="korisnicko" promptText="Korisnicko ime" GridPane.rowSpan="2">
+                            <GridPane.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </GridPane.margin>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#unesiKorisnika" text="Unesi" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </GridPane.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#izbrisiKorisnika" text="Izbriši" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </GridPane.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#azurirajKorisnika" text="Ažuriraj" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </GridPane.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#filtriraj" text="Filtriraj" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                            <GridPane.margin>
+                                <Insets bottom="10.0" />
+                            </GridPane.margin>
+                        </Button>
+                        <PasswordField fx:id="lozinka" promptText="Lozinka" GridPane.columnIndex="1" GridPane.rowSpan="2">
+                            <GridPane.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </GridPane.margin>
+                        </PasswordField>
+                        <DatePicker fx:id="datum" prefHeight="26.0" prefWidth="269.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                     <GridPane.margin>
+                        <Insets bottom="30.0" left="10.0" right="10.0" />
+                     </GridPane.margin></DatePicker>
+                        <Label text="Datum rođenja:" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="10.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <PasswordField fx:id="lozinka1" promptText="Ponovite lozinku" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </GridPane.margin>
+                        </PasswordField>
+                  <TextField fx:id="adresa" promptText="Adresa" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Korisnici" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets top="20.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                    </children>
+                </GridPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
