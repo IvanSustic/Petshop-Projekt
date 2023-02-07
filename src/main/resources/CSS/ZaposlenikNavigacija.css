@@ -1,0 +1,43 @@
+.gridPane{
+    -fx-background-color: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
+
+}
+
+.label{
+
+    -fx-font-family:sans-serif ;
+    -fx-font-weight: bolder;
+    -fx-font-size: 100%;
+}
+.anchorPane{
+    -fx-effect: dropshadow( one-pass-box , grey, 1 , 1 , 1 ,1 );
+}
+
+.flowPane{
+    -fx-pref-width: 100%;
+}
+
+.button{
+    -fx-background-color: lightgreen;
+    -fx-effect: dropshadow( one-pass-box , grey, 1 , 1 , 0 ,1 );
+}
+
+
+
+.button:hover{
+    -fx-background-color: white;
+    -fx-border-color: lightgreen;
+}
+
+.gridPane{
+    -fx-background-color: #d5eac8;
+}
+
+.odjava{
+    -fx-background-image: url("../Slike/Logout1.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow( one-pass-box , grey, 1 , 1 , 1 ,1 );
+
+}

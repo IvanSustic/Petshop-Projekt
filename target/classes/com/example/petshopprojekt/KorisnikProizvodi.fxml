@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="510.0" prefWidth="1257.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.petshopprojekt.KorisnikProizvodiController">
+    <children>
+        <fx:include source="KorisnikNavigacija.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" GridPane.rowSpan="3" />
+      <AnchorPane fx:id="pocetna" layoutX="201.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="1055.0" styleClass="gridPane" stylesheets="@../../../CSS/Ostalo.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="201.0" AnchorPane.rightAnchor="0.7999999999999545" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane layoutX="-1.0" layoutY="-3.0" prefHeight="826.0" prefWidth="346.0" AnchorPane.bottomAnchor="-3.3999999999999773" AnchorPane.leftAnchor="-1.0" AnchorPane.topAnchor="-3.0">
+               <children>
+                  <GridPane layoutX="-1.0" layoutY="5.0" prefHeight="820.0" prefWidth="346.0" AnchorPane.bottomAnchor="1.3999999999999773" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="5.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.5999755859375" minWidth="10.0" prefWidth="162.39996337890625" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="240.000048828125" minWidth="10.0" prefWidth="184.80003662109374" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Proizvodi" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="pretraga" prefHeight="40.0" prefWidth="145.0" promptText="Pretraži" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#pretrazi" prefHeight="40.0" prefWidth="100.0" text="Pretraži" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <VBox fx:id="odabranProizvod" prefHeight="370.0" prefWidth="324.0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="proizvodNaziv" alignment="CENTER" prefHeight="48.0" prefWidth="326.0" text="Proizvod">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="prozivodCijena" alignment="CENTER" prefHeight="58.0" prefWidth="332.0" text="10">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ImageView fx:id="proizvodSlika" fitHeight="170.0" fitWidth="295.0" pickOnBounds="true">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                              <TextArea fx:id="opis" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextArea>
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <Label prefHeight="54.0" prefWidth="88.0" text="Količina" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="kolicina" prefHeight="45.0" prefWidth="130.0" promptText="1" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                        <Button mnemonicParsing="false" onAction="#dodajUKosaricu" prefHeight="50.0" prefWidth="167.0" text="Dodaj u kosaricu" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#prikaziKosaricu" prefHeight="50.0" prefWidth="167.0" text="Prikazi kosaricu" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <ScrollPane fx:id="izbornik" layoutX="344.0" layoutY="14.0" prefHeight="810.0" prefWidth="697.0" AnchorPane.bottomAnchor="-4.399999999999977" AnchorPane.leftAnchor="343.9999999999999" AnchorPane.rightAnchor="13.600000000000023" AnchorPane.topAnchor="14.0">
+               <content>
+                  <GridPane fx:id="grid" prefHeight="0.0" prefWidth="0.0">
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                     </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="kosarica" layoutX="201.0" prefHeight="820.0" prefWidth="1055.0" stylesheets="@../../../CSS/Ostalo.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="201.0" AnchorPane.rightAnchor="0.7999999999999545" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane prefHeight="820.0" prefWidth="1055.0" styleClass="gridPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TableView fx:id="tablica" onMouseClicked="#odaberiProizvod" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="2">
+                     <columns>
+                        <TableColumn fx:id="nazivTablica" prefWidth="132.80007016658783" sortable="false" text="Naziv" />
+                        <TableColumn fx:id="kolicinaTablica" prefWidth="120.800048828125" sortable="false" text="Kolicina" />
+                        <TableColumn fx:id="cijenaTablica" prefWidth="140.79998779296875" sortable="false" text="Cijena" />
+                        <TableColumn fx:id="opisTablica" prefWidth="641.6000061035156" sortable="false" text="Opis" />
+                     </columns>
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </TableView>
+                  <Button mnemonicParsing="false" onAction="#izbrisiProizvod" prefHeight="40.0" prefWidth="138.0" text="Makni proizvod" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#kupi" prefHeight="45.0" prefWidth="128.0" text="Kupi" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#natrag" prefHeight="35.0" prefWidth="118.0" text="Natrag" GridPane.halignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="ukupnaCijena" text="Ukupna cijena" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

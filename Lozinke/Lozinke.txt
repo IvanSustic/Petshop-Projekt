@@ -1,0 +1,8 @@
+zaposlenik
+d350a6b5e16c424e20e5de40b4c121f5
+korisnik
+716b64c0f6bad9ac405aab3f00958dd1
+korisnik2
+1018c6339573355427c0ecd5b3a9574b
+zaposlenik2
+df4f64acc32818e8b07281fded7815a9
